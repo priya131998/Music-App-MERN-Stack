@@ -9,6 +9,7 @@ require('dotenv').config();
 // Connect to the database
 require('./config/database');
 
+const ensureLoggedIn = require('./config/ensureLoggedIn');
 const albumsRouter = require('./routes/api/albums');
 
 

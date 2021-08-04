@@ -75,7 +75,7 @@ function App(props) {
 				  React Album CRUD
 			  </header>
 		<main>
-	   { user ? (
+	   {/* { user ? ( */}
 		<>
 		<NavBar user={user} setUser={setUser} />
 		  <Switch>
@@ -83,6 +83,7 @@ function App(props) {
 		  <AlbumListPage
 						  albums={albums}
 						  handleDeleteAlbum={handleDeleteAlbum}
+						  user = {user}
 					  />
 				  </Route>
 				  <Route exact path='/add'>
@@ -94,12 +95,15 @@ function App(props) {
 		  <Route exact path='/edit'>
 					  <EditAlbumPage handleUpdateAlbum={handleUpdateAlbum} />
 				  </Route>
+				  <Route exact path='/signup'>
+					  <AuthPage setUser={setUser} />
+				  </Route>
 			<Redirect to="/albums" />
 		  </Switch>
 		  </>
-		  ) : (
+		  {/* ) : (
 			<AuthPage setUser={setUser} />
-		  )}
+		  )} */}
 		</main>
 		</div>
 	);

@@ -18,12 +18,16 @@ function NavBar({ user, setUser }) {
 			<Link to='/add'>Add Album</Link>
 			&nbsp; | &nbsp;
 			<span>
-				<b>Welcome, {user.name}</b>
+				<b>Welcome, {user && user.name}</b>
 			</span>
 			&nbsp; | &nbsp;
+			{ user ? 
 			<Link to='' onClick={handleLogOut}>
 				Log Out
 			</Link>
+			:
+			<Link to='/signup'>Sign Up/ Log In</Link>
+			}
 		</nav>
 	);
 }

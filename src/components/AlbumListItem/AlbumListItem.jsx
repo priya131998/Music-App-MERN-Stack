@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './AlbumListItem.css';
 
-function AlbumListItem({ album, handleDeleteAlbum }) {
+function AlbumListItem({ album, handleDeleteAlbum, user }) {
 // function AlbumListItem({ album, handleDeleteAlbum, isLoggedIn }) {
 
 	
@@ -52,12 +52,12 @@ function AlbumListItem({ album, handleDeleteAlbum }) {
 				>
 					EDIT
 				</Link>
-		<button
+		 { user && <button
 					className='btn btn-xs btn-danger margin-left-10'
 					onClick={() => handleDeleteAlbum(album._id)}
 				>
 					DELETE
-				</button>
+				</button> }
 
 			</div>
 		</div>

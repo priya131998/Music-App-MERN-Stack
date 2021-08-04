@@ -30,7 +30,7 @@ function AlbumListPage(props) {
 						album={album}
 						key={album._id}
 						handleDeleteAlbum={props.handleDeleteAlbum}
-						
+						user = {props.user}
 					/>
 				))}
 			</div>

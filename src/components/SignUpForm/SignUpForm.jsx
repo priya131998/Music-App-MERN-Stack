@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { signUp } from '../../utilities/users-service';
 
+
 export default class SignUpForm extends Component {
 	state = {
 		name: '',
@@ -9,7 +10,7 @@ export default class SignUpForm extends Component {
 		confirm: '',
 		error: '',
 	};
-
+	
 	// The object passed to setState is merged with the current state
 	handleChange = evt => {
 		this.setState({
