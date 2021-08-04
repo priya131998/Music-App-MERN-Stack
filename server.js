@@ -9,6 +9,9 @@ require('dotenv').config();
 // Connect to the database
 require('./config/database');
 
+const albumsRouter = require('./routes/api/albums');
+
+
 const app = express();
 
 app.use(logger('dev'));
@@ -25,6 +28,8 @@ app.use(require('./config/checkToken'));
 
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/albums', albumsRouter);
+
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
