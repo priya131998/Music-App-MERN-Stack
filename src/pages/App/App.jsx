@@ -51,6 +51,8 @@ function App(props) {
 		  await albumAPI.deleteOne(id);
 		  setAlbums(albums.filter(album => album._id !== id));
 	  }
+
+	//   async function handleAddSong()
   
 	//   async function hiddenButtons(props) {
 	// 	  const isLoggedIn = props.isLoggedIn;
