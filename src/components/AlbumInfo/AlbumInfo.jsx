@@ -17,8 +17,7 @@ function AlbumInfo({ album }) {
                     <dd>{album.releaseyear}</dd>
                     <dt>Album Cover Link</dt>
                     <dd>{album.albumcoverlink}</dd>
-					<dt>ID:</dt>
-					<dd></dd>
+					
 				</dl>
 			</div>
 			<div className='panel-footer'>

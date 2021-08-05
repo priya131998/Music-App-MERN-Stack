@@ -37,9 +37,11 @@ return sendRequest(`${BASE_URL}/${updatedAlbumData._id}`, 'PUT', updatedAlbumDat
 }
 
 export function deleteOne(id) {
-	return fetch(`${BASE_URL}/${id}`, {
-		method: 'DELETE',
-	}).then(res => res.json());
+	// return fetch(`${BASE_URL}/${id}`, {
+	// 	method: 'DELETE',
+	// }).then(res => res.json());
+
+return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
 }
 
 
