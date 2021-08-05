@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './AlbumListItem.css';
 
 function AlbumListItem({ album, handleDeleteAlbum, user }) {
+	
 // function AlbumListItem({ album, handleDeleteAlbum, isLoggedIn }) {
 
 	
@@ -43,7 +44,7 @@ function AlbumListItem({ album, handleDeleteAlbum, user }) {
 					DETAILS
 				</Link>
 				{/* {isLoggedIn && specialButton } */}
-				<Link
+				{ (user && user._id === album.user) && <Link
 					className='btn btn-xs btn-warning'
 					to={{
 						pathname: '/edit',
@@ -52,7 +53,8 @@ function AlbumListItem({ album, handleDeleteAlbum, user }) {
 				>
 					EDIT
 				</Link>
-		 { user && <button
+}
+		 { (user && user._id === album.user) && <button
 					className='btn btn-xs btn-danger margin-left-10'
 					onClick={() => handleDeleteAlbum(album._id)}
 				>

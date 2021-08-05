@@ -7,6 +7,7 @@ export default function AddAlbumPage(props) {
         artist: '',
 		releaseyear: '',
 		albumcoverlink: '',
+		user: props.user._id
 	});
 
 	const formRef = useRef();
@@ -26,6 +27,7 @@ export default function AddAlbumPage(props) {
 		setFormData({
 			...formData,
 			[e.target.name]: e.target.value,
+			user: props.user._id
 		});
 	};
 

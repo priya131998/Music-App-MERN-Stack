@@ -15,7 +15,7 @@ function NavBar({ user, setUser }) {
 		<nav>
 			<Link to='/'>Album List</Link>
 			&nbsp; | &nbsp;
-			<Link to='/add'>Add Album</Link>
+			<Link to={user ? '/add' : '/signup'}>Add Album</Link>
 			&nbsp; | &nbsp;
 			<span>
 				<b>Welcome, {user && user.name}</b>

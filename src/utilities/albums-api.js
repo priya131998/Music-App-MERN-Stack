@@ -23,6 +23,26 @@ export function create(newAlbumData) {
 }
 
 
+
+
+export function update(updatedAlbumData) {
+	// return fetch(`${BASE_URL}/${updatedAlbumData._id}`, {
+	// 	method: 'PUT',
+	// 	headers: { 'content-type': 'application/json' },
+	// 	body: JSON.stringify(updatedAlbumData),
+	// }).then(res => res.json());
+
+return sendRequest(`${BASE_URL}/${updatedAlbumData._id}`, 'PUT', updatedAlbumData )
+
+}
+
+export function deleteOne(id) {
+	return fetch(`${BASE_URL}/${id}`, {
+		method: 'DELETE',
+	}).then(res => res.json());
+}
+
+
 export default async function sendRequest(url, method = 'GET', payload = null) {
   // Fetch takes an optional options object as the 2nd argument
   // used to include a data payload, set headers, etc. 
@@ -45,18 +65,4 @@ export default async function sendRequest(url, method = 'GET', payload = null) {
   // res.ok will be false if the status code set to 4xx in the controller action
   if (res.ok) return res.json();
   throw new Error('Bad Request');
-}
-
-export function update(updatedAlbumData) {
-	return fetch(`${BASE_URL}/${updatedAlbumData._id}`, {
-		method: 'PUT',
-		headers: { 'content-type': 'application/json' },
-		body: JSON.stringify(updatedAlbumData),
-	}).then(res => res.json());
-}
-
-export function deleteOne(id) {
-	return fetch(`${BASE_URL}/${id}`, {
-		method: 'DELETE',
-	}).then(res => res.json());
 }

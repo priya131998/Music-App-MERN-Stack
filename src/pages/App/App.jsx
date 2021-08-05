@@ -86,9 +86,10 @@ function App(props) {
 						  user = {user}
 					  />
 				  </Route>
-				  <Route exact path='/add'>
-					  <AddAlbumPage handleAddAlbum={handleAddAlbum} />
+					  <Route exact path='/add'>
+					  <AddAlbumPage handleAddAlbum={handleAddAlbum} user={user}/>
 				  </Route>
+				  
 				  <Route exact path='/details'>
 					  <AlbumDetailPage />
 				  </Route>

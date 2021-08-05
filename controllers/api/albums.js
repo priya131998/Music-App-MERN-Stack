@@ -14,7 +14,6 @@ async function index(req, res) {
 }
 
 async function create(req, res) {
-	req.body.user = req.user
 	const newAlbum = await Album.create(req.body);
 	res.status(201).json(newAlbum);
 }
