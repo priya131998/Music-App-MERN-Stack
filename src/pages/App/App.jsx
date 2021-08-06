@@ -52,7 +52,16 @@ function App(props) {
 		  setAlbums(albums.filter(album => album._id !== id));
 	  }
 
-	//   async function handleAddSong()
+	  async function handleAddSong(newSongData, albumID) {
+		const newAlbum = await albumAPI.addSong(newSongData, albumID);
+		console.log(newAlbum)
+		
+		const newSongsArray = albums.map(s =>
+			s._id === newAlbum._id ? newAlbum : s
+		);
+	
+		setAlbums(newSongsArray);
+	}
   
 	//   async function hiddenButtons(props) {
 	// 	  const isLoggedIn = props.isLoggedIn;
@@ -93,7 +102,7 @@ function App(props) {
 				  </Route>
 				  
 				  <Route exact path='/details'>
-					  <AlbumDetailPage />
+					  <AlbumDetailPage handleAddSong={handleAddSong}/>
 				  </Route>
 		  <Route exact path='/edit'>
 					  <EditAlbumPage handleUpdateAlbum={handleUpdateAlbum} />

@@ -28,7 +28,7 @@ export default function AAlbumDetailPage(props) {
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		props.handleAddSong(formData);
+		props.handleAddSong(formData, album._id);
 	};
 
 	const handleChange = e => {
@@ -65,9 +65,18 @@ export default function AAlbumDetailPage(props) {
 				</div>
 
 				<button type='submit' className='btn' disabled={invalidForm}>
-					ADD ALBUM
+					ADD SONG
 				</button>
 			</form>
+			<div>
+			{props.songs.map(song => (
+					<PuppyListItem
+						song={song}
+						key={song._id}
+					/>
+				))}
+			</div>
+
 
 		</>
 	);

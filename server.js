@@ -11,6 +11,8 @@ require('./config/database');
 
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 const albumsRouter = require('./routes/api/albums');
+const songsRouter = require('./routes/api/songs');
+
 
 
 const app = express();
@@ -30,6 +32,9 @@ app.use(require('./config/checkToken'));
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/albums', albumsRouter);
+// app.use('/api/songs', songsRouter);
+
+app.use('/', songsRouter);
 
 
 // The following "catch all" route (note the *) is necessary

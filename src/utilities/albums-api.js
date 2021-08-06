@@ -23,8 +23,6 @@ export function create(newAlbumData) {
 }
 
 
-
-
 export function update(updatedAlbumData) {
 	// return fetch(`${BASE_URL}/${updatedAlbumData._id}`, {
 	// 	method: 'PUT',
@@ -35,6 +33,13 @@ export function update(updatedAlbumData) {
 return sendRequest(`${BASE_URL}/${updatedAlbumData._id}`, 'PUT', updatedAlbumData )
 
 }
+
+export function addSong(newSongData, albumId) {
+  console.log(newSongData)
+return sendRequest(`${BASE_URL}/${albumId}/songs`, 'POST', newSongData )
+}
+
+
 
 export function deleteOne(id) {
 	// return fetch(`${BASE_URL}/${id}`, {

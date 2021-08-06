@@ -9,15 +9,14 @@ function AlbumInfo({ album }) {
 			</div>
 			<div className='panel-body'>
 				<dl>
+				<dt>Album Cover</dt>
+                <img src={album.albumcoverlink} alt="" />
 					<dt>Artist</dt>
 					<dd>{album.artist}</dd>
 					<dt>Age</dt>
 					<dd>{album.age}</dd>
                     <dt>Release Year</dt>
-                    <dd>{album.releaseyear}</dd>
-                    <dt>Album Cover Link</dt>
-                    <dd>{album.albumcoverlink}</dd>
-					
+                    <dd>{album.releaseyear}</dd>		
 				</dl>
 			</div>
 			<div className='panel-footer'>

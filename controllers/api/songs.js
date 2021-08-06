@@ -1,17 +1,19 @@
-const Book = require('../models/album');
+const Album = require('../../models/album')
 
 module.exports = {
-  create,
-  delete: deleteSong
+  addSong,
+  delete: deleteSong,
+
+
 };
 
-function create(req, res) {
-  Album.findById(req.params.id, function(err, album) {
+
+async function addSong(req, res) {
+  console.log('work')
+  const album = await Album.findById(req.params.id) 
     album.songs.push(req.body);
-    album.save(function(err) {
-      res.redirect(`/albums/${album._id}`);
-    });
-  });
+    await album.save() 
+    res.status(200).json(album)
 }
 
   async function deleteSong(req, res) {
@@ -26,5 +28,5 @@ function create(req, res) {
     album.songs.splice(index, 1)
     await album.save()
     console.log(album)
-    res.redirect(`/albums/${req.params.albumId}`);
+    res.status(200).json(album);
   }
