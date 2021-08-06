@@ -83,7 +83,7 @@ function App(props) {
 	return (
 	<div className='App'>
 			  <header className='App-header'>
-				  React Album CRUD
+				  Music App
 			  </header>
 		<main>
 	   {/* { user ? ( */}

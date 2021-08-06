@@ -2,3 +2,26 @@
     display: flex;
     justify-content: space-around;
   }
+
+  .container {
+    /* width: calc(70%); */
+    /* height: calc(18.9%); */
+    margin: 15px; 
+    position: relative;
+    padding-right: 2%;
+    border-color: teal;
+    /* box-shadow: 5px 5px 5px rgba(0,0,0,.3); */
+  }
+  
+ 
+
+  .second-container {
+  
+    height: 140px; 
+    /* margin: auto; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; 
+    margin: 0 auto;
+  
+  }

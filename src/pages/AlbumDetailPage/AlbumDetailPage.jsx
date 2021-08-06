@@ -68,14 +68,14 @@ export default function AAlbumDetailPage(props) {
 					ADD SONG
 				</button>
 			</form>
-			<div>
+			{/* <div>
 			{props.songs.map(song => (
 					<PuppyListItem
 						song={song}
 						key={song._id}
 					/>
 				))}
-			</div>
+			</div> */}
 
 
 		</>
