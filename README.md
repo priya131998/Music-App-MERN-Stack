@@ -6,7 +6,7 @@ As a  user I'm able to see the index page which list of all the albums. As a use
 
 ## Screenshots of the app:
 
-![](https://github.com/priya131998/bookmania/blob/main/public/images/Screenshot%201.png)
+![](https://github.com/priya131998/Music-App-MERN-Stack/blob/main/Screen%20Shot%202021-08-07%20at%201.10.41%20AM.png)
 &nbsp;
 &nbsp;
 
